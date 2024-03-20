@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // Import useParams
 import { Menubar } from 'primereact/menubar';
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { InputText } from 'primereact/inputtext';
@@ -10,6 +10,7 @@ const DashboardHeader = () => {
   const resources = useRef(null);
   const [showSidebar, setShowSidebar] = useState(false);
 
+  // Get project name from URL params using useParams
   const { projectName } = useParams();
 
   const headerItems = [
@@ -57,11 +58,11 @@ const DashboardHeader = () => {
       <Menubar model={headerItems} />
       <Sidebar visible={showSidebar} onHide={() => setShowSidebar(false)} />
       
-      <OverlayPanel ref={op} appendTo={op.current}>
+      <OverlayPanel ref={op}>
         {dialogContent}
       </OverlayPanel>
 
-      <OverlayPanel ref={resources} appendTo={resources.current} showCloseIcon closeOnEscape>
+      <OverlayPanel ref={resources} showCloseIcon closeOnEscape>
         Stats
       </OverlayPanel>
     </div>
