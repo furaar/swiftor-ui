@@ -3,6 +3,8 @@
 ## Project Overview:
 Swiftor is a cloud-based Penetration Testing as a Service (PAAS) application aimed at simplifying and enhancing the penetration testing process. Leveraging CVE, OWASP, and ExploitDB databases, Swiftor enables users to generate comprehensive penetration test reports directly from their browser. The platform incorporates AI for report analysis and integrates Vulhub for hands-on training through vulnerable virtual machines (VMs).
 
+![Logic](/public/logic.webp "Logic Visualization")
+
 ## Key Features:
 - **Penetration Test Report Generation:** Users can generate detailed penetration test reports utilizing CVE, OWASP, and ExploitDB databases. The platform facilitates easy upload of findings and proof of concepts (POC) directly onto the application.
 - **Containerized Application:** Swiftor operates as a Docker container, ensuring easy deployment and scalability.

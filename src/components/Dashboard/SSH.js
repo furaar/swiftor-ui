@@ -51,7 +51,7 @@ export default function SSH() {
 
   return (
     <Terminal
-      welcomeMessage="Welcome to Swiftor"
+      welcomeMessage="Welcome to HackerX"
       prompt="~/furaar $"
       pt={{
         root: 'bg-gray-900 text-white border-round',

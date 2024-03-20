@@ -16,7 +16,7 @@ export default function Window() {
           Panel 1
         </SplitterPanel>
 
-        <SplitterPanel size={70}>
+        <SplitterPanel size={20}>
           <Splitter stateKey={"vertical"} stateStorage={"local"} layout="vertical">
 
             <SplitterPanel className="flex align-items-center justify-content-center" size={50}>
