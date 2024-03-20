@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Design Brief: Switor - Penetration Testing as a Service (PAAS) Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview:
+Switor is a cloud-based Penetration Testing as a Service (PAAS) application aimed at simplifying and enhancing the penetration testing process. Leveraging CVE, OWASP, and ExploitDB databases, Switor enables users to generate comprehensive penetration test reports directly from their browser. The platform incorporates AI for report analysis and integrates Vulhub for hands-on training through vulnerable virtual machines (VMs).
 
-## Available Scripts
+## Key Features:
+- **Penetration Test Report Generation:** Users can generate detailed penetration test reports utilizing CVE, OWASP, and ExploitDB databases. The platform facilitates easy upload of findings and proof of concepts (POC) directly onto the application.
+- **Containerized Application:** Switor operates as a Docker container, ensuring easy deployment and scalability.
+- **AI-driven Report Analysis:** An AI module analyzes findings and generates text for the reports, streamlining the reporting process.
+- **Vulnerable VM Deployment:** Users can spin up vulnerable VMs using Vulhub to practice and enhance their hacking skills. The VM deployment is managed separately from the main application.
 
-In the project directory, you can run:
+### Production Build Workflow:
+- Landing Page with Purchasing System and Login Page
+- Payment Integration (Stripe or Ethereum)
+- Creation of Default User VM Post-Payment
+- Docker Container Initialization (Switor)
+- Project Creation and Management for Penetration Tests
+- VM Deployment for Penetration Testing (HackerX)
+- PDF Report Download with AI-generated Content
 
-### `npm start`
+### User Interface Design:
+- **Panels and Tabs for Flexibility:** Users can arrange windows for PDF rendering, Switor editor, and HackerX VMs similar to VSCode.
+- **Integrated AI Module:** The AI functionality is seamlessly integrated into the Switor editor.
+- **Clusterized Architecture:** Each user's default VM, HackerX VMs, and training clusters are separate entities to ensure isolation and scalability.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
++---------------+----------------------------+---------+---------+
+|   sidemenu    | Swiftor v1                 |         |         |
+|               | [ProjectName]              | vnc tab | ssh tab |
++---------------+----------------------------+---------+---------+
+| reports       | Swiftor PDF Builder        |                   |
+| templates     |                            |                   |
+| data          |                            |                   |
+| upgrades      |                            |                   |
+|               |                            +---------+---------+
+| VM specs      | ...                        | Swiftor PDF RENDER|
+|               |                            +---------+---------+
+|               |                            |                   |
+|               |                            |                   |
+|               |                            |                   |
+| Logout button |                            |                   |
++---------------+----------------------------+---------+---------+
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
 
-### `npm test`
+## Technology Stack:
+- **Frontend:** HTML, CSS, JavaScript (React/Vue.js)
+- **Backend:** Node.js, Express.js
+- **Containerization:** Docker
+- **AI Integration:** Python (TensorFlow, PyTorch)
+- **VM Management:** Kubernetes
+- **PDF Generation:** Petereport (open-source PDF generator)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Management:
+- **Agile Development Methodology:** Utilize sprints to incrementally develop and iterate on features.
+- **Version Control:** Git for collaborative development and version management.
+- **Continuous Integration/Continuous Deployment (CI/CD) Pipeline:** Automate testing and deployment processes for seamless updates.
 
-### `npm run build`
+## Conclusion:
+Switor aims to revolutionize the penetration testing process by offering a comprehensive, user-friendly platform that combines advanced technology with intuitive design. With its containerized architecture, AI-driven analysis, and integrated VM deployment, Switor empowers users to conduct effective penetration tests and enhance their cybersecurity skills.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+### Prompt
+```js
+Lets make a PAAS application called Switor. Swiftor is a cloud computing application that allows users to generate penetration test reports directly from their browser. By using CVE, OWASP and ExploitDB, it helps testers render graphs, upload findings and POC directly onto the application. . I want this portion to be an easily spinable docker container.
 
-### `npm run eject`
+There will be ai that analyses each finding from type and generates text for the reports. With the help of Vulhub, the platform also helps hackers spin up vulnerable virtual machines to practice, train and better their hacking skills. The hacking Vm is another cluster on the VM
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Here is how the production build should operate like:
+1 - Landing page has a purchasing system as well as login page
+2 - after payment using stripe or maybe eth, the system creates a default user VM which runs the docker container.
+3 - the docker container is Swiftor which asks to fill in user information and allows to create projects (reports). each project has an option to allows users to spin up a VM using customizeable hardware specs and choose from a list of operating systems such as Kali. This is called HackerX which helps testers run peneration tests in their browser (we need to manage networking for this)
+4 - users can download the pdfs of their pentest reports which they filled in using AI.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+I want to use panels and tabs so the users can move the windows around for pdf render, swiftor editor and hackerX vm's. the ai is integrated in the editor. The tabs i am talking about are similar to vscode tabs and panels. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The entire application is clusterized. The user's default vm (upon signup) is a seperate virtualization cluster of 2gb storage, 512mb ram and 2vCPU. The HackerX is tailored and customizable but still a seperate cluster. The training cluster is global and community based. users can hack the same box if its live but still seperate cluster. I am not sure if cluster is the right word, maybe container is but you get the point. its seperated. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I am thinking of using PCF or petereport from github which are both open source pdf generators but i still need tro build a Swiftor dashboard with HackerX features etc.
+```
 
-### Code Splitting
+## Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Library      | Link                                              | Description                              |
+|--------------|---------------------------------------------------|------------------------------------------|
+| PrimeReact   | [Menu](https://primereact.org/menu/)             | PrimeReact Menu Component Documentation |
+| PrimeReact   | [TabView](https://primereact.org/tabview/)       | PrimeReact TabView Component Documentation |
+| PrimeReact   | [ConfirmPopup](https://primereact.org/confirmpopup/)       | PrimeReact ConfirmPopup Component Documentation |
+| PrimeReact   | [Icons](https://primereact.org/icons/)           | PrimeReact Icons Component Documentation |
+| PrimeReact   | [Splitter](https://primereact.org/splitter/)     | PrimeReact Splitter Component Documentation |
+| PrimeReact   | [Apollo](https://apollo.primereact.org/apps/blog/list) | Apollo PrimeReact Application Blog List |
+| Github       | [PwnDoc](https://github.com/pwndoc/pwndoc)       | PwnDoc GitHub Repository                 |
+| Github       | [PeTereport](https://github.com/1modm/petereport)| PeTereport GitHub Repository             |
