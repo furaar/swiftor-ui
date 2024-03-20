@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiftor PDF Builder</title>
+<style>
+  /* Styling for the layout */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+
+  header span {
+    color: skyblue;
+  }
+  .container {
+    display: flex;
+    height: calc(100vh - 60px); /* Adjusted height to account for header */
+  }
+  .sidemenu {
+    flex: 0 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    min-width: 100px;
+  }
+  .sidemenu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidemenu-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .main {
+    flex: 1 1 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .tabs {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .tab {
+    padding: 10px 15px;
+    background-color: #ddd;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .content {
+    flex: 1 1 auto;
+    display: flex;
+  }
+  .left-panel {
+    flex: 1 1 auto;
+    padding: 20px;
+    background-color: #eee;
+    margin-right: 20px;
+  }
+  .right-panel {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    padding: 20px;
+  }
+  .top-right-pane,
+  .bottom-right-pane {
+    flex: 1 1 50%; /* Equal split for top and bottom panes */
+    overflow-y: auto;
+    padding: 10px;
+  }
+  .logout-button {
+    margin-right: auto;
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+  }
+  img{
+    left: 80px;
+    position: absolute;
+    bottom: 10px;
+  }
+  .hide {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header"><button class="toggle-sidemenu">☰</button> Swiftor v2 | <span>[ProjectName]</span></div>
+</header>
+<div class="container">
+  <div class="sidemenu">
+    <ul>
+      <li class="sidemenu-item">☰ reports</li>
+      <li class="sidemenu-item">☰ templates</li>
+      <li class="sidemenu-item">☰ data</li>
+      <li class="sidemenu-item">☰ upgrades</li>
+      <li class="sidemenu-item">☰ VM specs</li>
+      <button class="sidemenu-item logout-button">Logout</button>
+    </ul>
+    <img src="https://static.thenounproject.com/png/467682-200.png" alt="" height="30px">
+  </div>
+  <div class="main">
+    <div class="content">
+      <div class="left-panel">
+        <!-- Left panel content -->
+      </div>
+      <div class="right-panel">
+        <div class="top-right-pane">
+          <div class="tabs">
+            <div class="tab">vnc tab</div>
+            <div class="tab">ssh tab</div>
+          </div>
+          <!-- Content for vnc and ssh -->
+        </div>
+        <div class="bottom-right-pane">
+          <!-- Content for bottom pane -->
+          Swiftor PDF RENDER
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer style="text-align: center;">Copyright (c) 2023 Swiftor</footer>
+<script>
+  document.querySelector('.toggle-sidemenu').addEventListener('click', function() {
+    document.querySelector('.sidemenu').classList.toggle('hide');
+  });
+</script>
+</body>
+</html>
