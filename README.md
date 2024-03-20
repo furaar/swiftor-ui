@@ -1,11 +1,11 @@
-# Design Brief: Switor - Penetration Testing as a Service (PAAS) Application
+# Swiftor - Penetration Testing as a Service
 
 ## Project Overview:
-Switor is a cloud-based Penetration Testing as a Service (PAAS) application aimed at simplifying and enhancing the penetration testing process. Leveraging CVE, OWASP, and ExploitDB databases, Switor enables users to generate comprehensive penetration test reports directly from their browser. The platform incorporates AI for report analysis and integrates Vulhub for hands-on training through vulnerable virtual machines (VMs).
+Swiftor is a cloud-based Penetration Testing as a Service (PAAS) application aimed at simplifying and enhancing the penetration testing process. Leveraging CVE, OWASP, and ExploitDB databases, Swiftor enables users to generate comprehensive penetration test reports directly from their browser. The platform incorporates AI for report analysis and integrates Vulhub for hands-on training through vulnerable virtual machines (VMs).
 
 ## Key Features:
 - **Penetration Test Report Generation:** Users can generate detailed penetration test reports utilizing CVE, OWASP, and ExploitDB databases. The platform facilitates easy upload of findings and proof of concepts (POC) directly onto the application.
-- **Containerized Application:** Switor operates as a Docker container, ensuring easy deployment and scalability.
+- **Containerized Application:** Swiftor operates as a Docker container, ensuring easy deployment and scalability.
 - **AI-driven Report Analysis:** An AI module analyzes findings and generates text for the reports, streamlining the reporting process.
 - **Vulnerable VM Deployment:** Users can spin up vulnerable VMs using Vulhub to practice and enhance their hacking skills. The VM deployment is managed separately from the main application.
 
@@ -13,14 +13,14 @@ Switor is a cloud-based Penetration Testing as a Service (PAAS) application aime
 - Landing Page with Purchasing System and Login Page
 - Payment Integration (Stripe or Ethereum)
 - Creation of Default User VM Post-Payment
-- Docker Container Initialization (Switor)
+- Docker Container Initialization (Swiftor)
 - Project Creation and Management for Penetration Tests
 - VM Deployment for Penetration Testing (HackerX)
 - PDF Report Download with AI-generated Content
 
 ### User Interface Design:
-- **Panels and Tabs for Flexibility:** Users can arrange windows for PDF rendering, Switor editor, and HackerX VMs similar to VSCode.
-- **Integrated AI Module:** The AI functionality is seamlessly integrated into the Switor editor.
+- **Panels and Tabs for Flexibility:** Users can arrange windows for PDF rendering, Swiftor editor, and HackerX VMs similar to VSCode.
+- **Integrated AI Module:** The AI functionality is seamlessly integrated into the Swiftor editor.
 - **Clusterized Architecture:** Each user's default VM, HackerX VMs, and training clusters are separate entities to ensure isolation and scalability.
 
 ```
@@ -57,14 +57,14 @@ Switor is a cloud-based Penetration Testing as a Service (PAAS) application aime
 - **Continuous Integration/Continuous Deployment (CI/CD) Pipeline:** Automate testing and deployment processes for seamless updates.
 
 ## Conclusion:
-Switor aims to revolutionize the penetration testing process by offering a comprehensive, user-friendly platform that combines advanced technology with intuitive design. With its containerized architecture, AI-driven analysis, and integrated VM deployment, Switor empowers users to conduct effective penetration tests and enhance their cybersecurity skills.
+Swiftor aims to revolutionize the penetration testing process by offering a comprehensive, user-friendly platform that combines advanced technology with intuitive design. With its containerized architecture, AI-driven analysis, and integrated VM deployment, Swiftor empowers users to conduct effective penetration tests and enhance their cybersecurity skills.
 
 
 
 ---
 ### Prompt
 ```js
-Lets make a PAAS application called Switor. Swiftor is a cloud computing application that allows users to generate penetration test reports directly from their browser. By using CVE, OWASP and ExploitDB, it helps testers render graphs, upload findings and POC directly onto the application. . I want this portion to be an easily spinable docker container.
+Lets make a PAAS application called Swiftor. Swiftor is a cloud computing application that allows users to generate penetration test reports directly from their browser. By using CVE, OWASP and ExploitDB, it helps testers render graphs, upload findings and POC directly onto the application. . I want this portion to be an easily spinable docker container.
 
 There will be ai that analyses each finding from type and generates text for the reports. With the help of Vulhub, the platform also helps hackers spin up vulnerable virtual machines to practice, train and better their hacking skills. The hacking Vm is another cluster on the VM
 
