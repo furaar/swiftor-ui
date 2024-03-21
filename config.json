@@ -1,0 +1,23 @@
+{
+    "NOTE": "remember to rename this file to config.json",
+    "projects": {
+        "swiftor-component": {
+            "port": 5000,
+            "backend": null,
+            "subdomain": "comp.swiftor"
+        },
+        "swiftor-ui": {
+            "port": 5001,
+            "backend": null,
+            "subdomain": "swiftor"
+        },
+        "swiftor-training": {
+            "port": 5002,
+            "backend": null,
+            "subdomain": "training.swiftor"
+        }
+    },
+    "reverseProxy": {
+        "domainName": "cybryx.live"
+    }
+}
