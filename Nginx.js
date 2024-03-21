@@ -52,7 +52,7 @@ function generateNginxConfig(config) {
   return serverBlocks;
 }
 
-fs.readFile('Projects/config.json', 'utf8', (err, data) => {
+fs.readFile('config.json', 'utf8', (err, data) => {
   if (err) {
     console.error('Error reading config.json:', err);
     return;
