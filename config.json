@@ -4,7 +4,7 @@
         "swiftor-component": {
             "port": 5000,
             "backend": null,
-            "subdomain": "comp.swiftor"
+            "subdomain": "swiftcomp"
         },
         "swiftor-ui": {
             "port": 5001,
@@ -14,7 +14,7 @@
         "swiftor-training": {
             "port": 5002,
             "backend": null,
-            "subdomain": "training.swiftor"
+            "subdomain": "training"
         }
     },
     "reverseProxy": {
